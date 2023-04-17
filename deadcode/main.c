@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-int main() {
-    int a = 5;
+void main() {
+    int a;
+    scanf("%d", &a);
     int b = 10;
 
     // dead code
@@ -9,5 +10,4 @@ int main() {
         printf("The value of a is %d\n", a);
     }
 
-    return 0;
 }
