@@ -1,0 +1,21 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x27ec630 [shape=record,label="{%0:\l  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store i32 0, i32* %1, align 4\l  store i32 10, i32* %2, align 4\l  store i32 20, i32* %3, align 4\l  store i32 0, i32* %4, align 4\l  store i32 0, i32* %5, align 4\l  store i32 0, i32* %6, align 4\l  br label %7\l}"];
+	Node0x27ec630 -> Node0x27ed340;
+	Node0x27ed340 [shape=record,label="{%7:\l7:                                                \l  %8 = load i32, i32* %6, align 4\l  %9 = icmp slt i32 %8, 5\l  br i1 %9, label %10, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x27ed340:s0 -> Node0x27eced0;
+	Node0x27ed340:s1 -> Node0x27ed4f0;
+	Node0x27eced0 [shape=record,label="{%10:\l10:                                               \l  %11 = load i32, i32* %2, align 4\l  %12 = load i32, i32* %3, align 4\l  %13 = icmp slt i32 %11, %12\l  br i1 %13, label %14, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x27eced0:s0 -> Node0x27ed6b0;
+	Node0x27eced0:s1 -> Node0x27ed700;
+	Node0x27ed6b0 [shape=record,label="{%14:\l14:                                               \l  %15 = load i32, i32* %2, align 4\l  %16 = load i32, i32* %3, align 4\l  %17 = add nsw i32 %15, %16\l  store i32 %17, i32* %4, align 4\l  %18 = load i32, i32* %4, align 4\l  store i32 %18, i32* %5, align 4\l  br label %23\l}"];
+	Node0x27ed6b0 -> Node0x27eda20;
+	Node0x27ed700 [shape=record,label="{%19:\l19:                                               \l  %20 = load i32, i32* %2, align 4\l  %21 = load i32, i32* %3, align 4\l  %22 = sub nsw i32 %20, %21\l  store i32 %22, i32* %5, align 4\l  br label %23\l}"];
+	Node0x27ed700 -> Node0x27eda20;
+	Node0x27eda20 [shape=record,label="{%23:\l23:                                               \l  %24 = load i32, i32* %2, align 4\l  %25 = add nsw i32 %24, 5\l  store i32 %25, i32* %2, align 4\l  br label %26\l}"];
+	Node0x27eda20 -> Node0x27ede30;
+	Node0x27ede30 [shape=record,label="{%26:\l26:                                               \l  %27 = load i32, i32* %6, align 4\l  %28 = add nsw i32 %27, 1\l  store i32 %28, i32* %6, align 4\l  br label %7\l}"];
+	Node0x27ede30 -> Node0x27ed340;
+	Node0x27ed4f0 [shape=record,label="{%29:\l29:                                               \l  %30 = load i32, i32* %5, align 4\l  ret i32 %30\l}"];
+}
